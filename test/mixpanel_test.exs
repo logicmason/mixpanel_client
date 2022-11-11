@@ -27,7 +27,7 @@ defmodule MixpanelTest do
                [
                  params: [
                    data:
-                     "eyJwcm9wZXJ0aWVzIjp7IlJlZmVycmVkIEJ5IjoiZnJpZW5kIiwidG9rZW4iOiIiLCJkaXN0aW5jdF9pZCI6IjEzNzkzIn0sImV2ZW50IjoiU2lnbmVkIHVwIn0="
+                     "eyJldmVudCI6IlNpZ25lZCB1cCIsInByb3BlcnRpZXMiOnsiZGlzdGluY3RfaWQiOiIxMzc5MyIsInRva2VuIjoiIiwiUmVmZXJyZWQgQnkiOiJmcmllbmQifX0="
                  ]
                ]
              ],
@@ -53,7 +53,7 @@ defmodule MixpanelTest do
                [
                  params: [
                    data:
-                     "eyJwcm9wZXJ0aWVzIjp7IkxldmVsIE51bWJlciI6OSwidG9rZW4iOiIiLCJ0aW1lIjoxMzU4MjA4MDAwLCJpcCI6IjIwMy4wLjExMy45IiwiZGlzdGluY3RfaWQiOiIxMzc5MyJ9LCJldmVudCI6IkxldmVsIENvbXBsZXRlIn0="
+                     "eyJldmVudCI6IkxldmVsIENvbXBsZXRlIiwicHJvcGVydGllcyI6eyJkaXN0aW5jdF9pZCI6IjEzNzkzIiwiaXAiOiIyMDMuMC4xMTMuOSIsInRpbWUiOjEzNTgyMDgwMDAsInRva2VuIjoiIiwiTGV2ZWwgTnVtYmVyIjo5fX0="
                  ]
                ]
              ],
@@ -80,7 +80,7 @@ defmodule MixpanelTest do
                [
                  params: [
                    data:
-                     "eyIkc2V0Ijp7IkFkZHJlc3MiOiIxMzEzIE1vY2tpbmdiaXJkIExhbmUifSwiJHRva2VuIjoiIiwiJGlwIjoiMTIzLjEyMy4xMjMuMTIzIiwiJGRpc3RpbmN0X2lkIjoiMTM3OTMifQ=="
+                     "eyIkZGlzdGluY3RfaWQiOiIxMzc5MyIsIiRpcCI6IjEyMy4xMjMuMTIzLjEyMyIsIiR0b2tlbiI6IiIsIiRzZXQiOnsiQWRkcmVzcyI6IjEzMTMgTW9ja2luZ2JpcmQgTGFuZSJ9fQ=="
                  ]
                ]
              ],
@@ -105,7 +105,7 @@ defmodule MixpanelTest do
                [
                  params: [
                    data:
-                     "eyIkc2V0Ijp7IkJpcnRoZGF5IjoiMTk0OC0wMS0wMSIsIkFkZHJlc3MiOiIxMzEzIE1vY2tpbmdiaXJkIExhbmUifSwiJHRva2VuIjoiIiwiJGlwIjoiMTIzLjEyMy4xMjMuMTIzIiwiJGRpc3RpbmN0X2lkIjoiMTM3OTMifQ=="
+                     "eyIkZGlzdGluY3RfaWQiOiIxMzc5MyIsIiRpcCI6IjEyMy4xMjMuMTIzLjEyMyIsIiR0b2tlbiI6IiIsIiRzZXQiOnsiQWRkcmVzcyI6IjEzMTMgTW9ja2luZ2JpcmQgTGFuZSIsIkJpcnRoZGF5IjoiMTk0OC0wMS0wMSJ9fQ=="
                  ]
                ]
              ],

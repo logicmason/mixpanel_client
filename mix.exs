@@ -1,13 +1,13 @@
 defmodule Mixpanel.Mixfile do
   use Mix.Project
 
-  @version "1.0.1"
+  @version "0.1.0"
 
   def project do
     [
-      app: :mixpanel_api_ex,
+      app: :mixpanel_client,
       version: @version,
-      elixir: "~> 1.5",
+      elixir: "~> 1.12",
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
       deps: deps(),
@@ -17,12 +17,12 @@ defmodule Mixpanel.Mixfile do
       package: package(),
 
       # Docs
-      name: "Mixpanel API",
+      name: "Mixpanel Client",
       docs: [
         extras: ["README.md", "CHANGELOG.md"],
         source_ref: "v#{@version}",
         main: "Mixpanel",
-        source_url: "https://github.com/agevio/mixpanel_api_ex"
+        source_url: "https://github.com/logicmason/mixpanel_client"
       ]
     ]
   end
@@ -33,9 +33,9 @@ defmodule Mixpanel.Mixfile do
 
   def package do
     [
-      maintainers: ["Mikalai Seva"],
+      maintainers: ["Mark Wilbur"],
       licenses: ["The MIT License"],
-      links: %{"GitHub" => "https://github.com/agevio/mixpanel_api_ex"},
+      links: %{"GitHub" => "https://github.com/logicmason/mixpanel_client"},
       files: ~w(mix.exs README.md CHANGELOG.md lib)
     ]
   end
@@ -46,12 +46,9 @@ defmodule Mixpanel.Mixfile do
 
   defp deps do
     [
-      {:httpoison, "~> 1.2"},
-      {:poison, "~> 3.1"},
-      {:credo, "~> 0.2", only: :dev},
-      {:dogma, "~> 0.0", only: :dev},
-      {:dialyxir, "~> 0.3", only: :dev},
-      {:mock, "~> 0.3.1", only: :test},
+      {:httpoison, "~> 1.8"},
+      {:jason, "~> 1.0"},
+      {:mock, "~> 0.3.7", only: :test},
       {:ex_doc, ">= 0.0.0", only: :dev},
       {:earmark, "~> 1.0", only: :dev},
       {:inch_ex, ">= 0.0.0", only: :dev}

@@ -11,7 +11,7 @@ defmodule Mixpanel.Client do
   @track_endpoint "https://api.mixpanel.com/track"
   @engage_endpoint "https://api.mixpanel.com/engage"
 
-  def start_link(config, opts \\ []) do
+  def start_link(config, opts \\ [name: __MODULE__]) do
     GenServer.start_link(__MODULE__, {:ok, config}, opts)
   end
 
@@ -42,7 +42,7 @@ defmodule Mixpanel.Client do
   def handle_cast({:track, event, properties}, %{token: token, active: true} = state) do
     data =
       %{event: event, properties: Map.put(properties, :token, token)}
-      |> Poison.encode!()
+      |> Jason.encode!()
       |> :base64.encode()
 
     case HTTPoison.get(@track_endpoint, [], params: [data: data]) do
@@ -51,9 +51,7 @@ defmodule Mixpanel.Client do
 
       other ->
         Logger.warn(
-          "Problem tracking Mixpanel event: #{inspect(event)}, #{inspect(properties)} Got: #{
-            inspect(other)
-          }"
+          "Problem tracking Mixpanel event: #{inspect(event)}, #{inspect(properties)} Got: #{inspect(other)}"
         )
     end
 
@@ -64,7 +62,7 @@ defmodule Mixpanel.Client do
     data =
       event
       |> Map.put(:"$token", token)
-      |> Poison.encode!()
+      |> Jason.encode!()
       |> :base64.encode()
 
     case HTTPoison.get(@engage_endpoint, [], params: [data: data]) do

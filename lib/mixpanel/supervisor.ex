@@ -11,16 +11,17 @@ defmodule Mixpanel.Supervisor do
   end
 
   def init(:ok) do
-    config = Application.get_env(:mixpanel_api_ex, :config)
+    config = Application.get_env(:mixpanel_client, :config)
 
     if config[:token] == nil do
       raise "Please set :mixpanel, :token in your app environment's config"
     end
 
     children = [
-      worker(Mixpanel.Client, [config, [name: Mixpanel.Client]])
+      {Mixpanel.Client, config}
     ]
 
-    supervise(children, strategy: :one_for_one, name: Mixpanel.Supervisor)
+    opts = [strategy: :one_for_one, name: Mixpanel.Supervisor]
+    Supervisor.init(children, opts)
   end
 end

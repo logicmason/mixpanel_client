@@ -1,40 +1,40 @@
 # Mixpanel
 
-[![Build Status](https://travis-ci.org/agevio/mixpanel_api_ex.svg?branch=master)](https://travis-ci.org/agevio/mixpanel_api_ex)
-[![Hex.pm](https://img.shields.io/hexpm/v/mixpanel_api_ex.svg?style=flat-square)](https://hex.pm/packages/mixpanel_api_ex)
-[![Hex.pm](https://img.shields.io/hexpm/dt/mixpanel_api_ex.svg?style=flat-square)](https://hex.pm/packages/mixpanel_api_ex)
-[![Inline docs](http://inch-ci.org/github/agevio/mixpanel_api_ex.svg?branch=master&style=flat)](http://inch-ci.org/github/agevio/mixpanel_api_ex)
+Elixir client for the Mixpanel API, forked from: https://github.com/agevio/mixpanel_api_ex
 
-Elixir client for the Mixpanel API.
+This repo is forked because I needed to make some updates to avoid dependency clashes and the
+original project doesn't appear to be accepting pull requests anymore. It's on github for
+convenience but please don't expect support. @agevio, if you would like these downstream
+changes as a PR to mixpanel_api_ex, just say the wordg!
 
 ## Installation
 
 The package can be installed as:
 
-  1. Add `mixpanel_api_ex` to your list of dependencies in `mix.exs`:
+  1. Add `mixpanel_client` to your list of dependencies in `mix.exs`:
 
   ```elixir
   def deps do
-    [{:mixpanel_api_ex, "~> 1.0.1"}]
+    [{:mixpanel_client, github: "logicmason/mixpanel_client"}]
   end
   ```
 
-  2. Ensure `mixpanel_api_ex` is started before your application:
+  2. Ensure `mixpanel_client` is started before your application:
 
   ```elixir
   def application do
-    [applications: [:mixpanel_api_ex]]
+    [applications: [:mixpanel_client]]
   end
   ```
 
   3. Ensure your Mixpanel token was placed in config file:
   ```elixir
-  config :mixpanel_api_ex, token: "<Put API token here>", active: true
+  config :mixpanel_client, token: "<Put API token here>", active: true
   ```
 
   4. Disable sending requests to API for tests:
   ```elixir
-  config :mixpanel_api_ex, token: "", active: false
+  config :mixpanel_client, token: "", active: false
   ```
 
 ## Usage
