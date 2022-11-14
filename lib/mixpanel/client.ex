@@ -46,7 +46,7 @@ defmodule Mixpanel.Client do
       |> :base64.encode()
 
     case HTTPoison.get(@track_endpoint, [], params: [data: data]) do
-      {:ok, %HTTPoison.Response{status_code: 200, body: "1"}} ->
+      {:ok, %HTTPoison.Response{status_code: 200}} ->
         :ok
 
       other ->
@@ -66,7 +66,7 @@ defmodule Mixpanel.Client do
       |> :base64.encode()
 
     case HTTPoison.get(@engage_endpoint, [], params: [data: data]) do
-      {:ok, %HTTPoison.Response{status_code: 200, body: "1"}} ->
+      {:ok, %HTTPoison.Response{status_code: 200}} ->
         :ok
 
       other ->
