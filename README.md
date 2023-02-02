@@ -5,7 +5,7 @@ Elixir client for the Mixpanel API, forked from: https://github.com/agevio/mixpa
 This repo is forked because I needed to make some updates to avoid dependency clashes and the
 original project doesn't appear to be accepting pull requests anymore. It's on github for
 convenience but please don't expect support. @agevio, if you would like these downstream
-changes as a PR to mixpanel_api_ex, just say the wordg!
+changes as a PR to mixpanel_api_ex, just say the word!
 
 ## Installation
 
